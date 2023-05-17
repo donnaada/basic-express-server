@@ -1,12 +1,20 @@
-# LAB - Class xx
+# LAB - Class 02
 
-## Project: Project Name Here
+## Project: Basic Express Server
 
-### Author: Student/Group Name
+### Author: Donna Ada
 
 ### Problem Domain  
 
-Concise Description of why this app exists
+Dynamic API Phase 1: Build your core, standards compliant Express server. From a business requirements standpoint, we will be building a basic Express server using best practices, including server modularization, use of middleware, and tests.
+
+#### Person Route
+
+  - Method: GET
+  - Path: /person
+    - Expects a query string from the user with a “name” property
+    - When present, output JSON to the client with this shape: { name: "name provided" }
+    - Without a name in the query string, force a “500” error
 
 ### Links and Resources
 
@@ -16,11 +24,14 @@ Concise Description of why this app exists
 
 ### Collaborators
 
+Referenced Ryan Gallaway's Demo Code
+CodeFellow TA's for assistance with server.js and server.test.js issues
+
 ### Setup
 
 #### `.env` requirements (where applicable)
 
-for now I have none and do not require one
+Port variable located within .env.sample
 
 
 #### How to initialize/run your application (where applicable)
@@ -29,16 +40,16 @@ for now I have none and do not require one
 
 #### How to use your library (where applicable)
 
+Clone repo, npm i, then run nodemon in terminal
+
 #### Features / Routes
 
 - Feature One: Details of feature
-- GET : `/hello` - specific route to hit
+- GET : `/person` - specific route to hit with query?name=name
 
 #### Tests
 
-- How do you run tests?
-- Any tests of note?
-- Describe any tests that you did not complete, skipped, etc
+To Run tests, run the command npm test
 
 #### UML
 

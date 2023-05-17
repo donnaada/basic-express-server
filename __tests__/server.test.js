@@ -17,6 +17,17 @@ describe('Server', () => {
     expect(res.body.route).toEqual('/bad');
   });
 
+  test('handle bad method', async () => {
+    let res = await mockRequest.post('/');
+    expect(res.status).toEqual(404);
+
+    res = await mockRequest.put('/');
+    expect(res.status).toEqual(404);
+
+    res = await mockRequest.delete('/');
+    expect(res.status).toEqual(404);
+  });
+
   test('handles not found', async () => {
     const res = await mockRequest.get('/foo');
     expect(res.status).toEqual(404);
