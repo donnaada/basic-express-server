@@ -53,4 +53,4 @@ To Run tests, run the command npm test
 
 #### UML
 
-Link to an image of the UML for your application and response to events
+![Lab 2 UML](./assets/lab2-uml.png)
