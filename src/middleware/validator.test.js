@@ -5,23 +5,19 @@
 const validator = require('./validator');
 
 describe('Validator Middleware', () => {
-  let res ={};
+  let res = {};
   let req = {};
-
-  // this mocks the next function
   let next = jest.fn();
 
   test('Throws an error, as expected', () => {
-    req = {params: {something: 'something'}};
+    req = { query: { something: 'something' } };
     validator(req, res, next);
-
-    expect(next).toHaveBeenCalledWith('Path parameter must be a name');
+    expect(next).toHaveBeenCalledWith('No name found in query string');
   });
 
-  test('Runs Successfully, as expected', () => {
-    req = {params: {name: 'name'}};
+  test('Runs Successfully, as expected', async () => {
+    req = { query: { name: 'donna' } };
     validator(req, res, next);
-
     expect(next).toHaveBeenCalledWith();
   });
 });

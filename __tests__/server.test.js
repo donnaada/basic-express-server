@@ -5,11 +5,9 @@ const supertest = require('supertest');
 const mockRequest = supertest(app);
 
 describe('Server', () => {
-  it('Handles the root path', async () => {
+  test('Handles the root path', async () => {
     const res = await mockRequest.get('/');
-
-    // expect(res.status).toEqual(200);
-    expect(res.text).toBeTruthy;
+    expect(res.status).toEqual(200);
   });
 
   test('handles bad request', async () => {
@@ -24,21 +22,21 @@ describe('Server', () => {
     expect(res.status).toEqual(404);
   });
 
-  // test('validate parameter', async () => {
-  //   let res = await mockRequest.get('/person/something');
-  //   expect(res.status).toEqual(500);
+  test('validate name in query string', async () => {
+    let res = await mockRequest.get('/person?something=something');
+    expect(res.status).toEqual(500);
 
-  //   res = await mockRequest.get('/person/name');
-  //   expect(res.status).toEqual(200);
-  // });
+    res = await mockRequest.get('/person?name=nam');
+    expect(res.status).toEqual(200);
+  });
 
-  // test('validate name', async () => {
-  //   let res = await mockRequest.get('/person/somethingElse');
-  //   expect(res.status).toEqual(500);
+  test('validate output object', async () => {
+    let res = await mockRequest.get('/person?something=something');
+    expect(res.status).toEqual(500);
 
-  //   res = await mockRequest.get('/person/name');
-  //   expect(res.status).toEqual(200);
-  // });
+    res = await mockRequest.get('/person?name=donna');
+    expect(res.body).toEqual({ "name": "donna" });
+  });
 
 });
 

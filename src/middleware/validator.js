@@ -1,11 +1,9 @@
 'use strict';
 
-//TODO: Write Middleware
-
 module.exports = (req, res, next) => {
-  if(req.params.name === 'name'){
+  if (req.query.name) {
     next();
   } else {
-    next('Path parameter must be a name');
+    next('No name found in query string');
   }
 };
