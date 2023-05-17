@@ -18,9 +18,8 @@ Dynamic API Phase 1: Build your core, standards compliant Express server. From a
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd](https://github.com/rkgallaway/server-deployment-practice-d51/actions) 
-- [back-end server url](http://xyz.com) (when applicable)
-- [front-end application](http://xyz.com) (when applicable)
+- [GitHub Actions ci/cd](https://github.com/donnaada/basic-express-server/actions) 
+- [back-end server url](https://basic-express-server-curg.onrender.com)
 
 ### Collaborators
 
